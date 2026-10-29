@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>SpearHawk | Website, Web App &amp; Mobile App Development</title>
+    <meta
+      name="description"
+      content="SpearHawk is a digital agency specializing in professional website, web application, and mobile application design &amp; development for businesses and startups."
+    />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c1725" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SpearHawk" />
+    <meta property="og:title" content="SpearHawk | Website, Web App &amp; Mobile App Development" />
+    <meta
+      property="og:description"
+      content="SpearHawk is a digital agency specializing in professional website, web application, and mobile application design &amp; development for businesses and startups."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_AR" />
+
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Typography: Inter (Latin) + Cairo (Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply persisted theme + language direction before first paint (no flash) -->
+    <script>
+      ;(function () {
+        var root = document.documentElement
+        try {
+          var lang = window.localStorage.getItem('spearhawk-lang')
+          if (lang === 'ar' || lang === 'en') {
+            root.lang = lang
+            root.dir = lang === 'ar' ? 'rtl' : 'ltr'
+          }
+          var theme = window.localStorage.getItem('spearhawk-theme')
+          if (theme !== 'light' && theme !== 'dark') {
+            theme =
+              window.matchMedia &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          }
+          root.dataset.theme = theme
+        } catch (error) {
+          root.dataset.theme = 'light'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
